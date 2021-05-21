@@ -26,7 +26,6 @@ function getTable(model){
 }
 
 function inputForm(model){
-    const {input} = model
     const message1 = 'Left temperature is source (y/n)?'
     const message2 = 'Temperature value to convert?'
     return inquirer.prompt([
@@ -50,4 +49,24 @@ function inputForm(model){
             default: input  
         }
     ])
+}
+
+function listForm(model){
+    const message1 = 'From?'
+    const message2 = 'To?'
+    const choices = ['Cellius', 'Fahrenheit', "Kelvin"]
+    return inquirer.prompt([{
+        name: 'input1.1',
+        type: 'list',
+        message: message1,
+        default: input,
+        choices: choices
+    },
+    {
+        name: 'input1.1',
+        type: 'list',
+        message: message2,
+        default: input,
+        choices: choices
+    }])
 }
