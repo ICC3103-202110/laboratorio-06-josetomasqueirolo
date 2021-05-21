@@ -27,12 +27,13 @@ function getTable(model){
 
 function inputForm(model){
     const {input} = model
-    const message = 'Left temperature is source (y/n)?'
+    const message1 = 'Left temperature is source (y/n)?'
+    const message2 = 'Temperature value to convert?'
     return inquirer.prompt([
         {
-            name: 'input',
+            name: 'input1',
             type: 'input',
-            message: message,
+            message: message1,
             default: input,
             validate: function(value){
                 if(value === 'y' || value === 'n'){
@@ -41,6 +42,12 @@ function inputForm(model){
                     return "Enter 'y' or 'n'."
                 }
             }
+        },
+        {
+            name: 'input2',
+            type: 'input',
+            message: message2,
+            default: input  
         }
     ])
 }
