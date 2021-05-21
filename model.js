@@ -4,3 +4,7 @@ initModel = {
     rightValue: 32,
     rightUnit: "Fahrenheit"
 }
+
+module.exorte = {
+    initModel
+}
