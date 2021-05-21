@@ -71,3 +71,15 @@ function listForm(model){
     }])
 }
 
+function view(model){
+    return {
+        title: getTitle(),
+        table: getTable(model)
+    }
+}
+
+module.exports = {
+    view, 
+    inputForm,
+    listForm
+}
