@@ -70,3 +70,4 @@ function listForm(model){
         choices: choices
     }])
 }
+
