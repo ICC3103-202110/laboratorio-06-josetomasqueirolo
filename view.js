@@ -34,7 +34,7 @@ function inputForm(model){
             type: 'input',
             message: message1,
             validate: function(value){
-                if(value === 'y' || value === 'n'){
+                if(value === "y" || value === "n"){
                     return true
                 } else {
                     return "Enter 'y' or 'n'."
@@ -52,7 +52,7 @@ function inputForm(model){
 function listForm(model){
     const message1 = 'From?'
     const message2 = 'To?'
-    const choices = ['Cellius', 'Fahrenheit', "Kelvin"]
+    const choices = ["Celcius", "Fahrenheit", "Kelvin"]
     return inquirer.prompt([{
         name: 'input3',
         type: 'list',
