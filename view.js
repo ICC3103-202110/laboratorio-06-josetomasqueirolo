@@ -44,7 +44,7 @@ function inputForm(model){
         {
             name: 'input2',
             type: 'input',
-            message: message2 
+            message: message2
         }
     ])
 }

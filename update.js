@@ -24,16 +24,6 @@ function K_F(temperature){
     return parseFloat((temperature-273.15)*9/5) + parseFloat(32)
 }
 
-// FUNCIÓN PARA VER EL LADO DE LA TABLA
-function check(input1, input2, input3, input4, model){
-    if(input1 == "y"){
-        update1(input2, input3, input4, model)
-    } else {
-        update2(input2, input3, input4, model)
-    }
-}
-
-
 // FUNCIÓN PARA ACTUALIZAR LADO DERECHO DE LA TABLA
 async function update1(input2, input3, input4, model){
     const newLeftValue= input2
@@ -80,45 +70,44 @@ async function update1(input2, input3, input4, model){
         rightValue: newRightValue,
         rightUnit: newRightUnit
     }
-
 }
 
 // FUNCIÓN PARA ACTUALIZAR LADO DERECHO DE LA TABLA
 async function update2(input2, input3, input4, model){
-    const {newRightValue}= input4
-    const {newRightUnit}= input3
-    const {newLeftUnit}= input2
+    const newRightValue= input2
+    const newRightUnit= input3
+    const newLeftUnit= input4
 
     if(input3== "Celcius"){
         if(input4=="Fahrenheit"){
             newLeftValue = C_F(input2)
         } 
-        if(input4=="Kelvin"){
+        else if(input4=="Kelvin"){
             newLeftValue = C_K(input2)
         } 
-        if(input4=="Celcius"){
+        else if(input4=="Celcius"){
             newLeftValue = input2
         } 
     }
-    if(input3== "Fahrenheit"){
+    else if(input3== "Fahrenheit"){
         if(input4=="Fahrenheit"){
             newLeftValue = input2
         } 
-        if(input4=="Kelvin"){
+        else if(input4=="Kelvin"){
             newLeftValue = F_K(input2)
         } 
-        if(input4=="Celcius"){
+        else if(input4=="Celcius"){
             newLeftValue = F_C(input2)
         } 
     }
-    if(input3== "Kelvin"){
+    else if(input3== "Kelvin"){
         if(input4=="Fahrenheit"){
             newLeftValue = K_F(input2)
         } 
-        if(input4=="Kelvin"){
+        else if(input4=="Kelvin"){
             newLeftValue = input2
         } 
-        if(input4=="Celcius"){
+        else if(input4=="Celcius"){
             newLeftValue = K_C(input2)
         } 
     }
@@ -130,9 +119,8 @@ async function update2(input2, input3, input4, model){
         rightUnit: newRightUnit
     }
 
-}   
+}
 module.exports = {
     update1,
-    update2,
-    check
+    update2
 }
