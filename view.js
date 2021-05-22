@@ -16,10 +16,10 @@ function getTitle(){
 // para imprimir titulo hacer con console.log()
 
 function getTable(model){
-    const leftValue = model
-    const leftUnit = model
-    const rightValue = model
-    const rightUnit = model
+    const {leftValue} = model
+    const {leftUnit} = model
+    const {rightValue} = model
+    const {rightUnit} = model
     return [
         {"leftValue": leftValue, "leftUnit": leftUnit, "rightValue": rightValue, "rightUnit": rightUnit},
     ]
@@ -54,13 +54,13 @@ function listForm(model){
     const message2 = 'To?'
     const choices = ['Cellius', 'Fahrenheit', "Kelvin"]
     return inquirer.prompt([{
-        name: 'input1.1',
+        name: 'input3',
         type: 'list',
         message: message1,
         choices: choices
     },
     {
-        name: 'input1.1',
+        name: 'input4',
         type: 'list',
         message: message2,
         choices: choices

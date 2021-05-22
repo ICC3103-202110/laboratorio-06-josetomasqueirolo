@@ -23,10 +23,6 @@ function K_F(temperature){
 }
 
 function update(input1, input2, input3, input4, model){
-    const {leftValue} = model
-    const {leftUnit} = model
-    const {rightValue} = model
-    const {rightUnit} = model
     if(input1=="y"){
         const newLeftValue= input2
         const newLeftUnit= input3
@@ -65,10 +61,11 @@ function update(input1, input2, input3, input4, model){
                 const newRightValue = K_C(input2)
             } 
         }
+    }
     else{
-        const newRightValue= input2
-        const newRightUnit= input3
-        const newLefttUnit= input4
+        const {newRightValue}= input2
+        const {newRightUnit}= input3
+        const {newLefttUnit}= input4
 
         if(input3== "Celcius"){
             if(input4=="Fahrenheit"){
@@ -104,8 +101,7 @@ function update(input1, input2, input3, input4, model){
             } 
         }
     }
-    }
-
+    
     return {
         ...model,
         leftValue: newLeftValue,
@@ -113,8 +109,8 @@ function update(input1, input2, input3, input4, model){
         rightValue: newRightValue,
         rightUnit: newRightUnit
     }
-}
 
+}
 module.exports = {
     update
 }

@@ -5,6 +5,6 @@ initModel = {
     rightUnit: "Fahrenheit"
 }
 
-module.exorte = {
+module.exports = {
     initModel
 }
